@@ -5,8 +5,8 @@ const fetch = (...args) => import('node-fetch').then(({default: f}) => f(...args
 const app = express();
 const PORT = 3000;
 
-const token = '1965280785:AAFjXY8Mw2Sp9WsoX-OspY_Th9cXWjdRlnc';
-const targetChatId = -4556541704;
+const token = '2126967530:AAGporE3Tw4VhjSO9ieVZ0lgA6XNpVkZtw4';
+const targetChatId = -4571236984;
 const bot = new TelegramBot(token, { polling: true });
 
 app.use(express.json());
