@@ -13,22 +13,22 @@ app.use(express.json());
 
 app.get('/send', async (req, res) => {
     try {
-        const { creo, vertical, contact, login, sub } = req.query;
-        if (!creo || !vertical || !contact || !login || !sub) {
+        const { creo, vertical, contact, login, sub, geo } = req.query;
+        if (!creo || !vertical || !contact || !login || !sub || !geo) {
             return res.status(400).json({ error: 'Missing required parameters' });
         }
 
         const parsedLines = [
-            `Creo: ${creo}`,
+            
+            `Geo: ${geo}`,
             `Vertical: ${vertical}`,
             `Method: ${contact}`,
             `Login: ${login}`,
-            `ClickId: ${sub}`
+            `Creo: ${creo}`
+            
         ].join('\n');
 
-        await bot.sendMessage(targetChatId, `Новый лид:
-
-${parsedLines}\n\n`, {
+        await bot.sendMessage(targetChatId, `Новый лид:\n\n${parsedLines}\n\n`, {
             reply_markup: {
                 inline_keyboard: [
                     [
