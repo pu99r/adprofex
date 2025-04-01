@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "pm2-start": "pm2 start bot.js --name adprofex",
+    "stop": "pm2 stop adprofex"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
