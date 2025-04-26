@@ -17,10 +17,10 @@ app.use(express.json());
  */
 app.get('/send', async (req, res) => {
   try {
-    const { creo, vertical, contact, login, sub, geo, chat } = req.query;
+    const { creo, vertical, contact, login, sub, geo, chat, site } = req.query;
 
     // проверяем обязательные поля
-    if (!creo || !vertical || !contact || !login || !sub || !geo) {
+    if (!creo || !vertical || !contact || !login || !sub || !geo || !site) {
       return res.status(400).json({ error: 'Missing required parameters' });
     }
 
@@ -39,6 +39,7 @@ app.get('/send', async (req, res) => {
      *  Формируем текст лида
      *-----------------------------------------------------------*/
     const text = [
+      `Site: ${site}`,
       `Geo: ${geo}`,
       `Vertical: ${vertical}`,
       `Method: ${contact}`,
