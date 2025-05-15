@@ -86,7 +86,7 @@ bot.on('callback_query', async (cb) => {
     let newText = message.text;
     if (action === 'approve') {
       // шлём постбэк вашему трекеру
-      const url = `https://app4my-knowledge.com/29d342d/postback?subid=${subid}&status=Lead&from=myfb`;
+      const url = `https://adprofex-webmaster.com/29d342d/postback?subid=${subid}&status=Lead&from=myfb`;
       try {
         const resp = await fetch(url);
         console.log(`Postback sent, status: ${resp.status}`);
